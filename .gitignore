@@ -1,6 +1,6 @@
 # Prerequisites
 *.d
-*.vs
+*.vs/
 
 # Compiled Object files
 *.slo
@@ -16,6 +16,7 @@
 *.so
 *.dylib
 *.dll
+*.suo
 
 # Fortran module files
 *.mod
