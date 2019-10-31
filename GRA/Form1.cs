@@ -17,6 +17,7 @@ namespace GRA
         Boolean win = false;
         Graphics g;
         Shooter shooter = new Shooter();
+        Bullet bullet = new Bullet();
         Pen shooterPen = new Pen(Color.White, 1);
 
         public Form1()
@@ -51,6 +52,15 @@ namespace GRA
             g.Clear(Color.Black);
             g.DrawRectangle(shooterPen, shooter.x, shooter.y, shooter.width, shooter.height);
             shooter.move();
+            if (bullet.shoot == true)
+            {
+                g.DrawRectangle(shooterPen, bullet.x, bullet.y, bullet.width, bullet.height);
+                bullet.move();
+            }
+            else
+            {
+                bullet.x = shooter.x;
+            }
         }
 
 
@@ -58,6 +68,16 @@ namespace GRA
         private void timer1_Tick(object sender, EventArgs e)
         {
             drawing();
+        }
+
+        private void panel1_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            
+        }
+
+        private void panel1_MouseClick(object sender, MouseEventArgs e)
+        {
+            bullet.shoot = true;
         }
     }
 }
