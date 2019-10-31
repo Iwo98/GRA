@@ -18,43 +18,28 @@ namespace GRA
         Graphics g;
         Shooter shooter = new Shooter();
         Bullet bullet = new Bullet();
-        Pen shooterPen = new Pen(Color.White, 1);
+        Pen Pen = new Pen(Color.Black, 3);
+        
 
         public Form1()
         {
             InitializeComponent();
-            g = panel1.CreateGraphics();
-            
-        }
-
-            private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-            System.Windows.Forms.Timer t = new System.Windows.Forms.Timer();
-            t.Tick += new EventHandler(timer1_Tick);
-            t.Start();
+            DoubleBuffered = true;
+            g = CreateGraphics();
 
 
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
-
         }
 
         public void drawing()
-        { 
-            g.Clear(Color.Black);
-            g.DrawRectangle(shooterPen, shooter.x, shooter.y, shooter.width, shooter.height);
+        {
             shooter.move();
             if (bullet.shoot == true)
             {
-                g.DrawRectangle(shooterPen, bullet.x, bullet.y, bullet.width, bullet.height);
+               
                 bullet.move();
             }
             else
@@ -67,7 +52,9 @@ namespace GRA
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+
             drawing();
+            Invalidate();
         }
 
         private void panel1_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
@@ -75,9 +62,22 @@ namespace GRA
             
         }
 
-        private void panel1_MouseClick(object sender, MouseEventArgs e)
+     
+
+        private void Form1_MouseUp(object sender, MouseEventArgs e)
         {
             bullet.shoot = true;
+            
+        }
+
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+            e.Graphics.DrawImage(new Bitmap("fork.png"), shooter.x, shooter.y, shooter.width, shooter.height);
+            e.Graphics.DrawRectangle(Pen, 30,105, 567, 375);
+            if (bullet.shoot == true)
+            {
+                e.Graphics.DrawImage(new Bitmap("peas.png"), bullet.x, bullet.y, bullet.width, bullet.height);
+            }
         }
     }
 }
