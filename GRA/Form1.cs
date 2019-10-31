@@ -73,7 +73,7 @@ namespace GRA
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
             e.Graphics.DrawImage(new Bitmap("fork.png"), shooter.x, shooter.y, shooter.width, shooter.height);
-            e.Graphics.DrawRectangle(Pen, 30,105, 567, 375);
+            e.Graphics.DrawRectangle(Pen, 10,105, 567, 465);
             if (bullet.shoot == true)
             {
                 e.Graphics.DrawImage(new Bitmap("peas.png"), bullet.x, bullet.y, bullet.width, bullet.height);

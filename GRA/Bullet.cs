@@ -10,8 +10,8 @@ namespace GRA
     {
         public int height = 20;
         public int width = 20;
-        public int x = 5;
-        public int y = 375;
+        public int x = 10;
+        public int y = 465;
         public Boolean shoot = false;
      
 
@@ -21,7 +21,7 @@ namespace GRA
 
             if(y<100)
             {
-                y = 375;
+                y = 465;
                 shoot = false;
             }
         }

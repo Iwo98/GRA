@@ -10,8 +10,8 @@ namespace GRA
     {
         public int height = 60;
         public int width = 20;
-        public int x = 5;
-        public int y = 415;
+        public int x = 10;
+        public int y = 505;
         Boolean forward = true;
 
         public Shooter()
