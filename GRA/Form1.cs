@@ -18,8 +18,11 @@ namespace GRA
         Graphics g;
         Shooter shooter = new Shooter();
         Bullet bullet = new Bullet();
-        Pen Pen = new Pen(Color.Black, 3);
-        
+        Target target = new Target(30, 305, 100, 100, true, "makaron");
+
+        Pen Black = new Pen(Color.Black, 1);
+        Pen White = new Pen(Color.AliceBlue, 1);
+
 
         public Form1()
         {
@@ -37,15 +40,20 @@ namespace GRA
         public void drawing()
         {
             shooter.move();
+            bullet.hitbox(target);
+
             if (bullet.shoot == true)
             {
-               
                 bullet.move();
+               
             }
             else
             {
                 bullet.x = shooter.x;
+                bullet.y = 485;
             }
+
+            
         }
 
 
@@ -57,27 +65,47 @@ namespace GRA
             Invalidate();
         }
 
-        private void panel1_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
-        {
-            
-        }
+    
 
      
 
         private void Form1_MouseUp(object sender, MouseEventArgs e)
         {
             bullet.shoot = true;
+            Console.WriteLine("co");
             
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
+
+            Rectangle excludeRect = new Rectangle(30, 105, 50, 50);
             e.Graphics.DrawImage(new Bitmap("fork.png"), shooter.x, shooter.y, shooter.width, shooter.height);
-            e.Graphics.DrawRectangle(Pen, 10,105, 567, 465);
-            if (bullet.shoot == true)
+            e.Graphics.DrawRectangle(Black, target.x, target.y, target.width, target.height);
+            e.Graphics.DrawRectangle(Black, 29,104, 557, 465);
+           
+           
+            if (bullet.shoot == true )
             {
                 e.Graphics.DrawImage(new Bitmap("peas.png"), bullet.x, bullet.y, bullet.width, bullet.height);
+              
+
             }
+            if (target.hit == true)
+            {
+                e.Graphics.DrawRectangle(White, target.x, target.y, target.width, target.height);
+                
+
+            }
+
+           
+
+
+        }
+
+        private void Form1_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
