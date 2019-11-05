@@ -19,6 +19,7 @@ namespace GRA
         Shooter shooter = new Shooter();
         Bullet bullet = new Bullet();
         Target target = new Target(30, 305, 100, 100, true, "makaron");
+        Target target1 = new Target(130, 305, 100, 100, true, "makaron");
 
         Pen Black = new Pen(Color.Black, 1);
         Pen White = new Pen(Color.AliceBlue, 1);
@@ -41,6 +42,7 @@ namespace GRA
         {
             shooter.move();
             bullet.hitbox(target);
+            bullet.hitbox(target1);
 
             if (bullet.shoot == true)
             {
@@ -50,7 +52,7 @@ namespace GRA
             else
             {
                 bullet.x = shooter.x;
-                bullet.y = 485;
+                bullet.y = 660;
             }
 
             
@@ -72,17 +74,18 @@ namespace GRA
         private void Form1_MouseUp(object sender, MouseEventArgs e)
         {
             bullet.shoot = true;
-            Console.WriteLine("co");
+           
             
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
 
-            Rectangle excludeRect = new Rectangle(30, 105, 50, 50);
+           
             e.Graphics.DrawImage(new Bitmap("fork.png"), shooter.x, shooter.y, shooter.width, shooter.height);
             e.Graphics.DrawRectangle(Black, target.x, target.y, target.width, target.height);
-            e.Graphics.DrawRectangle(Black, 29,104, 557, 465);
+            e.Graphics.DrawRectangle(Black, target1.x, target1.y, target1.width, target1.height);
+            e.Graphics.DrawRectangle(Black, 30,150, 700, 610);
            
            
             if (bullet.shoot == true )
@@ -91,12 +94,7 @@ namespace GRA
               
 
             }
-            if (target.hit == true)
-            {
-                e.Graphics.DrawRectangle(White, target.x, target.y, target.width, target.height);
-                
-
-            }
+           
 
            
 

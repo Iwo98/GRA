@@ -11,7 +11,7 @@ namespace GRA
         public int height = 20;
         public int width = 20;
         public int x = 10;
-        public int y = 485;
+        public int y = 660;
         public Boolean shoot = false;
         public Boolean hit = false;
      
@@ -20,9 +20,9 @@ namespace GRA
         {
             y = y - 4;
 
-            if(y<105)
+            if(y<150)
             {
-               // y = 485;
+                
                 shoot = false;
                 
             }
@@ -30,11 +30,10 @@ namespace GRA
 
         public void hitbox(Target target)
         {
-            if (x >= target.x && x <= (target.x + target.width) && y == ( target.y + target.height) && shoot == true )
+            if (x >= target.x && x <= (target.x + target.width) && y <= ( target.y + target.height) && shoot == true )
             {
                 target.hit = true;
-                Console.WriteLine(y);
-                y = 485;
+                target.x = 1000;
                 hit = true;
                 shoot = false;
                

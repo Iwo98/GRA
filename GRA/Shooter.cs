@@ -11,7 +11,7 @@ namespace GRA
         public int height = 60;
         public int width = 20;
         public int x = 10;
-        public int y = 505;
+        public int y = 690;
         Boolean forward = true;
 
         public Shooter()
@@ -25,7 +25,7 @@ namespace GRA
             if (forward == true)
             {
                 this.x=x+2;
-                if (this.x > 567)
+                if (this.x > 720)
                 {
                     forward = false;
                 }
