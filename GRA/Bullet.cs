@@ -38,7 +38,7 @@ namespace GRA
             {
                 
                 target.hit = true;
-                //target.x = 2000;
+                target.x = 2000;
                 hit = true;
                 shoot = false;
                 if(target.healthy == true)
@@ -52,14 +52,6 @@ namespace GRA
                         int buf = Int32.Parse(points);
                         buf -= 20;
                         points = Convert.ToString(buf);
-                }
-            }
-
-            foreach(Target target in targety)
-            {
-                if(target.hit == true)
-                {
-                    targety.Remove(target);
                 }
             }
           
