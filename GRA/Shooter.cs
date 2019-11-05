@@ -24,15 +24,15 @@ namespace GRA
             
             if (forward == true)
             {
-                this.x=x+2;
-                if (this.x > 720)
+                this.x=x+3;
+                if (this.x > 710)
                 {
                     forward = false;
                 }
             }
             else
             {
-                this.x=x-2;
+                this.x=x-3;
                 if( x < 30)
                 {
                     forward = true;
