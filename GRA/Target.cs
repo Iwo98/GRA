@@ -12,13 +12,13 @@ namespace GRA
         public int y;
         public int height = 20;
         public int width = 20;
-        public bool hit = false;
-        public bool healthy;
+        public Boolean hit = false;
+        public int healthy = 0;
         public string name;
         
 
 
-        public Target(int x, int y, int height, int width, bool healthy, string name)
+        public Target(int x, int y, int height, int width, int healthy, string name)
         {
             this.x = x;
             this.y = y;
