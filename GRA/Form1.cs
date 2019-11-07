@@ -92,17 +92,15 @@ namespace GRA
                 bullet.y = 660;
             }
             label2.Text = bullet.points;
-            foreach(Target target in targety)
+            foreach (Target target in targety)
             {
                 i++;
-                
+
             }
-            //Console.WriteLine(i);
             int e = (targety.FindIndex(t => t.hit == true));
             if (e != -1)
             {
-                targety.RemoveAt(e);
-            
+                targety.RemoveAt(e);         
             }
           
             
@@ -116,6 +114,7 @@ namespace GRA
         private void Form1_MouseUp(object sender, MouseEventArgs e)
         {
             bullet.shoot = true;
+            Shooter xxx = new Shooter();
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
