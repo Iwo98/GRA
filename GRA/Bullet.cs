@@ -8,7 +8,7 @@ namespace GRA
 {
     class Bullet
     {
-        public int height = 20;
+        public int height = 40;
         public int width = 20;
         public int x = 10;
         public int y = 660;
