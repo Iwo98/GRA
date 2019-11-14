@@ -18,23 +18,30 @@ namespace GRA
         Graphics g;
         Shooter shooter = new Shooter();
         Bullet bullet = new Bullet();
-        Target target = new Target(431, 251, 100, 100, 1, "makaron");
-        Target target1 = new Target(131, 251, 100, 100, 0, "pomidor");
-        Target target2 = new Target(131, 151, 100, 100, 1, "brokuł");
-        Target target3 = new Target(431, 151, 100, 100, 1, "cukier");
-        Target target4 = new Target(231, 151, 100, 100, 0, "pomidor");
-        Target target5 = new Target(231, 251, 100, 100, 1, "brokuł");
-        Target target6 = new Target(531, 251, 100, 100, -1, "cukier");
-        Target target7 = new Target(531, 151, 100, 100, 0, "pomidor");
-        Target target8 = new Target(631, 151, 100, 100, -1, "brokuł");
-        Target target9 = new Target(631, 251, 100, 100, 1, "cukier");
-        Target target10 = new Target(331, 251, 100, 100, 0, "pomidor");
-        Target target11= new Target(31, 251, 100, 100, 1, "brokuł");
-        Target target12= new Target(31, 151, 100, 100, -1, "cukier");
-        Target target13 = new Target(331, 151, 100, 100, 0, "pomidor");
+        Target target = new Target(431, 251, 100, 100, 1, "1");
+        Target target1 = new Target(131, 251, 100, 100, 0, "2");
+        Target target2 = new Target(131, 151, 100, 100, 1, "3");
+        Target target3 = new Target(431, 151, 100, 100, 1, "4");
+        Target target4 = new Target(231, 151, 100, 100, 0, "5");
+        Target target5 = new Target(231, 251, 100, 100, 1, "6");
+        Target target6 = new Target(531, 251, 100, 100, -1, "7");
+        Target target7 = new Target(531, 151, 100, 100, 0, "8");
+        Target target8 = new Target(631, 151, 100, 100, -1, "9");
+        Target target9 = new Target(631, 251, 100, 100, 1, "10");
+        Target target10 = new Target(331, 251, 100, 100, 0, "11");
+        Target target11= new Target(31, 251, 100, 100, 1, "12");
+        Target target12= new Target(31, 151, 100, 100, -1, "13");
+        Target target13 = new Target(331, 151, 100, 100, 0, "14");
+        Target targetNo1 = new Target(31, 31, 100, 100, 1, "1");
+        Target targetNo2= new Target(531, 31, 100, 100, 1, "3");
+        Target targetNo3= new Target(131, 31, 100, 100, 1, "4");
+        Target targetNo4= new Target(231, 31, 100, 100, 1, "6");
+        Target targetNo5 = new Target(331, 31, 100, 100, 1, "10");
+        Target targetNo6 = new Target(431, 31, 100, 100, 1, "12");
 
 
         List<Target> targety = new List<Target>();
+        List<Target> targetyNo = new List<Target>();
         Pen Black = new Pen(Color.Black, 1);
         Pen White = new Pen(Color.AliceBlue, 1);
 
@@ -42,6 +49,7 @@ namespace GRA
         System.Drawing.SolidBrush Green = new System.Drawing.SolidBrush(System.Drawing.Color.Green);
         System.Drawing.SolidBrush Yellow = new System.Drawing.SolidBrush(System.Drawing.Color.Yellow);
 
+   
 
         public Form1()
         {
@@ -62,6 +70,12 @@ namespace GRA
             targety.Add(target11);
             targety.Add(target12);
             targety.Add(target13);
+            targetyNo.Add(targetNo1);
+            targetyNo.Add(targetNo2);
+            targetyNo.Add(targetNo3);
+            targetyNo.Add(targetNo4);
+            targetyNo.Add(targetNo5);
+            targetyNo.Add(targetNo6);
             countHealthy(targety);
             
 
@@ -78,7 +92,7 @@ namespace GRA
         {
             int i = 0;
             shooter.move();
-            bullet.hitbox(targety);
+            bullet.hitbox(targety, targetyNo);
             if (bullet.shoot == true)
             {
                 bullet.move();
@@ -119,7 +133,7 @@ namespace GRA
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
-
+            e.Graphics.DrawRectangle(Black, 30, 30, 701, 100);
             e.Graphics.DrawRectangle(Black, 30, 150, 701, 610);
             e.Graphics.DrawImage(new Bitmap("fork.png"), shooter.x, shooter.y, shooter.width, shooter.height);  
             foreach(Target target in targety)
@@ -128,12 +142,18 @@ namespace GRA
                 {
                     if (target.healthy == -1)
                         e.Graphics.FillRectangle(Red, target.x, target.y, target.width, target.height);
-                    else if (target.healthy == 1)
-                        e.Graphics.FillRectangle(Green, target.x, target.y, target.width, target.height);
+                    else if (target.healthy == 1)                  
+                        e.Graphics.FillRectangle(Green, target.x, target.y, target.width, target.height);                    
                     else
                         e.Graphics.FillRectangle(Yellow, target.x, target.y, target.width, target.height);
                 }
             }
+
+            foreach (Target targetNo in targetyNo)
+            {
+                e.Graphics.FillRectangle(Green, targetNo.x, targetNo.y, targetNo.width, targetNo.height);
+            }
+
 
             if (bullet.shoot == true)
             {

@@ -15,71 +15,56 @@ namespace GRA
         public Boolean shoot = false;
         public Boolean hit = false;
         public string points = "0";
-        int i = 0;
         public int healthies = 0;
 
-
-
-
-        public void move()
+        public void hitbox(List<Target> targety, List<Target> targetyNo)
         {
-            y = y - 10;
-
-            if(y<150)
-            {
-                
-                shoot = false;
-                
-            }
-        }
-
-        public void hitbox(List<Target> targety)
-        {
-
             foreach (Target target in targety)
             {
                 if (target != null && x >= target.x && x <= (target.x + target.width) && y <= (target.y + target.height) && shoot == true)
                 {
-                    
+                    int index;
+                    string nazwa = target.name;
                     target.hit = true;
-                    i++;
-                    Console.WriteLine(i);
-                    if(target.healthy==1)
-                    {
-                        healthies--;
-                    }
                     hit = true;
                     shoot = false;
-                    if (target.healthy == 1)
-                    {
-                        int buf = Int32.Parse(points);
-                        buf += 100;
-                        points = Convert.ToString(buf);
-                    }
-                    else if (target.healthy == -1)
-                    {
-                        int buf = Int32.Parse(points);
-                        buf -= 30;
-                        points = Convert.ToString(buf);
-                    }
-                    else
-                    {
-                        int buf = Int32.Parse(points);
-                        buf -= 10;
-                        points = Convert.ToString(buf);
-                    }
-
-                
-
+                    checkIfHealthy(target);
+                    index = (targetyNo.FindIndex(t => t.name == nazwa));
+                    if (target != null && target.healthy==1 )
+                        targetyNo[index].height -= 50;
                 }
             }
-
-           
         }
 
-        public void delete(Target target)
+        private void checkIfHealthy(Target target)
         {
-            target = null;
+            if (target.healthy == 1)
+            {
+                healthies--;
+                int buf = Int32.Parse(points);
+                buf += 100;
+                points = Convert.ToString(buf);
+            }
+            else if (target.healthy == -1)
+            {
+                int buf = Int32.Parse(points);
+                buf -= 30;
+                points = Convert.ToString(buf);
+            }
+            else
+            {
+                int buf = Int32.Parse(points);
+                buf -= 10;
+                points = Convert.ToString(buf);
+            }
         }
+
+        public void move()
+        {
+            y = y - 12;
+            if (y < 150)
+                shoot = false;
+        }
+
     }
 }
