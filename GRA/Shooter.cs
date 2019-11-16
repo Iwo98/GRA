@@ -8,10 +8,10 @@ namespace GRA
 {
     class Shooter
     {
-        public int height = 60;
-        public int width = 20;
+        public int height = 80;
+        public int width = 40;
         public int x = 10;
-        public int y = 690;
+        public int y = 670;
         public bool forward = true;
 
         public Shooter()
@@ -23,13 +23,13 @@ namespace GRA
         {
             if (forward == true)
             {
-                this.x=x+3;
+                this.x=x+5;
                 if ( this.x > 710 )
                     forward = false;
             }
             else
             {
-                this.x=x-3;
+                this.x=x-5;
                 if( x < 30 )
                     forward = true;
             }

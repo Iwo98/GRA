@@ -12,7 +12,7 @@ namespace GRA
         public int y;
         public int height = 20;
         public int width = 20;
-        public Boolean hit = false;
+        public bool hit = false;
         public int healthy = 0;
         public string name;
         

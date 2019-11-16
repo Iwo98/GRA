@@ -32,18 +32,20 @@ namespace GRA
         Target target11= new Target(31, 251, 100, 100, 1, "12");
         Target target12= new Target(31, 151, 100, 100, -1, "13");
         Target target13 = new Target(331, 151, 100, 100, 0, "14");
-        Target targetNo1 = new Target(31, 31, 100, 100, 1, "1");
-        Target targetNo2= new Target(531, 31, 100, 100, 1, "3");
-        Target targetNo3= new Target(131, 31, 100, 100, 1, "4");
-        Target targetNo4= new Target(231, 31, 100, 100, 1, "6");
-        Target targetNo5 = new Target(331, 31, 100, 100, 1, "10");
-        Target targetNo6 = new Target(431, 31, 100, 100, 1, "12");
+        Target targetNo1 = new Target(41, 41, 80, 80, 1, "1");
+        Target targetNo2= new Target(541, 41, 80, 80, 1, "3");
+        Target targetNo3= new Target(141, 41, 80, 80, 1, "4");
+        Target targetNo4= new Target(241, 41, 80, 80, 1, "6");
+        Target targetNo5 = new Target(341, 41, 80, 80, 1, "10");
+        Target targetNo6 = new Target(441, 41, 80, 80, 1, "12");
 
 
         List<Target> targety = new List<Target>();
         List<Target> targetyNo = new List<Target>();
-        Pen Black = new Pen(Color.Black, 1);
+        Pen Black = new Pen(Color.Black, 2);
         Pen White = new Pen(Color.AliceBlue, 1);
+        Pen Hit = new Pen(Color.Gold, 5);
+        Pen NotHit = new Pen(Color.Gray, 5);
 
         System.Drawing.SolidBrush Red = new System.Drawing.SolidBrush(System.Drawing.Color.Red);
         System.Drawing.SolidBrush Green = new System.Drawing.SolidBrush(System.Drawing.Color.Green);
@@ -76,12 +78,7 @@ namespace GRA
             targetyNo.Add(targetNo4);
             targetyNo.Add(targetNo5);
             targetyNo.Add(targetNo6);
-            countHealthy(targety);
-            
-
-
-
-
+            countHealthies(targety);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -90,53 +87,40 @@ namespace GRA
 
         public void drawing()
         {
-            int i = 0;
             shooter.move();
-            bullet.hitbox(targety, targetyNo);
+            bullet.hitbox(targety, targetyNo);                          //checking out collision
             if (bullet.shoot == true)
-            {
                 bullet.move();
-              
-            
-               
-            }
+
             else
             {
                 bullet.x = shooter.x;
                 bullet.y = 660;
             }
-            label2.Text = bullet.points;
-            foreach (Target target in targety)
-            {
-                i++;
 
-            }
-            int e = (targety.FindIndex(t => t.hit == true));
-            if (e != -1)
-            {
+            label2.Text = bullet.points;                                //updating points
+
+            int e = (targety.FindIndex(t => t.hit == true));            //finding out which object was shot
+
+            if (e != -1)                                                //removing object from the list that was shot
                 targety.RemoveAt(e);         
-            }
-          
-            
-
         }
-        private void timer1_Tick(object sender, EventArgs e)
+        private void timer1_Tick(object sender, EventArgs e)            //making changes about position of the object every 3 miliseconds (timer interval set on 3);
         {
             drawing();
             Invalidate();
         }
         private void Form1_MouseUp(object sender, MouseEventArgs e)
-        {
-            bullet.shoot = true;
-            Shooter xxx = new Shooter();
+        {       
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
-            e.Graphics.DrawRectangle(Black, 30, 30, 701, 100);
-            e.Graphics.DrawRectangle(Black, 30, 150, 701, 610);
-            e.Graphics.DrawImage(new Bitmap("fork.png"), shooter.x, shooter.y, shooter.width, shooter.height);  
-            foreach(Target target in targety)
+            e.Graphics.DrawRectangle(Black, 30, 30, 701, 100);                      //drawing rectangle for the targets that has to be shot
+            e.Graphics.DrawRectangle(Black, 30, 150, 701, 610);                     //drawing a rectangle for the map 
+            e.Graphics.DrawImage(new Bitmap("fork.png"), shooter.x, shooter.y, shooter.width, shooter.height);  //drawing a shooter
+
+            foreach(Target target in targety)                   //drawing targets on the standard map
             {
                 if (target != null)
                 {
@@ -149,21 +133,26 @@ namespace GRA
                 }
             }
 
-            foreach (Target targetNo in targetyNo)
+            foreach (Target targetNo in targetyNo)                                              //drawing healthy targets that user has to shot
             {
-                e.Graphics.FillRectangle(Green, targetNo.x, targetNo.y, targetNo.width, targetNo.height);
+                e.Graphics.FillRectangle(Green, targetNo.x , targetNo.y , targetNo.width , targetNo.height);
+                
+                if(targetNo.hit == false)   
+                {
+                    e.Graphics.DrawRectangle(NotHit, targetNo.x, targetNo.y, targetNo.width, targetNo.height);
+                }
+                else
+                    e.Graphics.DrawRectangle(Hit, targetNo.x, targetNo.y, targetNo.width, targetNo.height); //changing color when user shot the right target
             }
 
 
             if (bullet.shoot == true)
-            {
-                e.Graphics.DrawImage(new Bitmap("peas.png"), bullet.x, bullet.y, bullet.width, bullet.height);
+                e.Graphics.DrawImage(new Bitmap("peas.png"), bullet.x, bullet.y, bullet.width, bullet.height); //drawing a bullet when being shot
 
-            }
 
-            if( bullet.healthies ==0)
+            if( bullet.healthies ==0)                                            // winning condition
             {
-                e.Graphics.DrawImage(new Bitmap("win.png"), 30, 150, 703, 611);
+                e.Graphics.DrawImage(new Bitmap("win.png"), 30, 150, 703, 611); 
             }
         }
 
@@ -177,19 +166,28 @@ namespace GRA
 
         }
 
-        private void countHealthy(List<Target> targety)
+        private void countHealthies(List<Target> targety)       //counting healthy targets
         {
             int i = 0;
             foreach (Target target in targety)
-            {
-                
+            {   
                 if(target.healthy==1)
-                {
                     i++;
-                }
             }
-
             bullet.healthies = i;
+        }
+
+        private void Form1_KeyUp(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void Form1_Shot(object sender, KeyEventArgs e)      //when space is clicked then shot
+        {
+            int keyIndex = e.KeyValue;
+
+            if (keyIndex == 32)
+                bullet.shoot = true;
         }
     }
 }
