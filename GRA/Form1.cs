@@ -98,7 +98,7 @@ namespace GRA
                 bullet.y = 660;
             }
 
-            label2.Text = bullet.points;                                //updating points
+            //label2.Text = bullet.points;                                //updating points
 
             int e = (targety.FindIndex(t => t.hit == true));            //finding out which object was shot
 
@@ -116,44 +116,6 @@ namespace GRA
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
-            e.Graphics.DrawRectangle(Black, 30, 30, 701, 100);                      //drawing rectangle for the targets that has to be shot
-            e.Graphics.DrawRectangle(Black, 30, 150, 701, 610);                     //drawing a rectangle for the map 
-            e.Graphics.DrawImage(new Bitmap("fork.png"), shooter.x, shooter.y, shooter.width, shooter.height);  //drawing a shooter
-
-            foreach(Target target in targety)                   //drawing targets on the standard map
-            {
-                if (target != null)
-                {
-                    if (target.healthy == -1)
-                        e.Graphics.FillRectangle(Red, target.x, target.y, target.width, target.height);
-                    else if (target.healthy == 1)                  
-                        e.Graphics.FillRectangle(Green, target.x, target.y, target.width, target.height);                    
-                    else
-                        e.Graphics.FillRectangle(Yellow, target.x, target.y, target.width, target.height);
-                }
-            }
-
-            foreach (Target targetNo in targetyNo)                                              //drawing healthy targets that user has to shot
-            {
-                e.Graphics.FillRectangle(Green, targetNo.x , targetNo.y , targetNo.width , targetNo.height);
-                
-                if(targetNo.hit == false)   
-                {
-                    e.Graphics.DrawRectangle(NotHit, targetNo.x, targetNo.y, targetNo.width, targetNo.height);
-                }
-                else
-                    e.Graphics.DrawRectangle(Hit, targetNo.x, targetNo.y, targetNo.width, targetNo.height); //changing color when user shot the right target
-            }
-
-
-            if (bullet.shoot == true)
-                e.Graphics.DrawImage(new Bitmap("peas.png"), bullet.x, bullet.y, bullet.width, bullet.height); //drawing a bullet when being shot
-
-
-            if( bullet.healthies ==0)                                            // winning condition
-            {
-                e.Graphics.DrawImage(new Bitmap("win.png"), 30, 150, 703, 611); 
-            }
         }
 
         private void Form1_Load_1(object sender, EventArgs e)
