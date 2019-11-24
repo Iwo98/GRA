@@ -1,13 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Timers;
+
 
 namespace GRA
 {
@@ -17,9 +12,9 @@ namespace GRA
         Graphics g;
         Shooter shooter = new Shooter();
         Bullet bullet = new Bullet();
-        Target target = new Target(431, 251, 100, 100, 1, "1");
-        Target target1 = new Target(131, 251, 100, 100, 0, "2");
-        Target target2 = new Target(131, 151, 100, 100, 1, "3");
+        Target target = new Target(431, 251, 100, 100, 1, "marchewka");
+        Target target1 = new Target(131, 251, 100, 100, 0, "ogórek");
+        Target target2 = new Target(131, 151, 100, 100, 1, "brokul");
         Target target3 = new Target(431, 151, 100, 100, 1, "4");
         Target target4 = new Target(231, 151, 100, 100, 0, "5");
         Target target5 = new Target(231, 251, 100, 100, 1, "6");
@@ -31,8 +26,8 @@ namespace GRA
         Target target11 = new Target(31, 251, 100, 100, 1, "12");
         Target target12 = new Target(31, 151, 100, 100, -1, "13");
         Target target13 = new Target(331, 151, 100, 100, 0, "14");
-        Target targetNo1 = new Target(41, 41, 80, 80, 1, "1");
-        Target targetNo2 = new Target(541, 41, 80, 80, 1, "3");
+        Target targetNo1 = new Target(41, 41, 80, 80, 1, "marchewka");
+        Target targetNo2 = new Target(541, 41, 80, 80, 1, "brokul");
         Target targetNo3 = new Target(141, 41, 80, 80, 1, "4");
         Target targetNo4 = new Target(241, 41, 80, 80, 1, "6");
         Target targetNo5 = new Target(341, 41, 80, 80, 1, "10");
@@ -88,7 +83,7 @@ namespace GRA
             {
                 e.Graphics.DrawRectangle(Black, 30, 30, 701, 100);                      //drawing rectangle for the targets that has to be shot
                 e.Graphics.DrawRectangle(Black, 30, 150, 901, 610);                     //drawing a rectangle for the map 
-                e.Graphics.DrawImage(new Bitmap("fork.png"), shooter.x, shooter.y, shooter.width, shooter.height);  //drawing a shooter
+                e.Graphics.DrawImage(new Bitmap("Resources/fork.png"), shooter.x, shooter.y, shooter.width, shooter.height);  //drawing a shooter
 
                 foreach (Target target in targety)                   //drawing targets on the standard map
                 {
@@ -117,7 +112,7 @@ namespace GRA
 
 
                 if (bullet.shoot == true)
-                    e.Graphics.DrawImage(new Bitmap("peas.png"), bullet.x, bullet.y, bullet.width, bullet.height); //drawing a bullet when being shot
+                    e.Graphics.DrawImage(new Bitmap("Resources/peas.png"), bullet.x, bullet.y, bullet.width, bullet.height); //drawing a bullet when being shot
 
 
                 if (bullet.healthies == 0)                                            // winning condition
@@ -148,7 +143,7 @@ namespace GRA
             public void updating()
             {
                 shooter.move();
-                bullet.hitbox(targety, targetyNo);                          //checking out collision
+                bullet.collision(targety, targetyNo);                          //checking out collision
                 if (bullet.shoot == true)
                     bullet.move();
 
@@ -158,7 +153,7 @@ namespace GRA
                     bullet.y = 660;
                 }
 
-                label2.Text = bullet.points;                                //updating points
+                users_score.Text = bullet.points;                                //updating points
 
                 int e = (targety.FindIndex(t => t.hit == true));            //finding out which object was shot
 

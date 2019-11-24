@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace GRA
 {
@@ -12,12 +10,11 @@ namespace GRA
         public int width = 30;
         public int x = 10;
         public int y = 640;
-        public Boolean shoot = false;
-        public Boolean hit = false;
+        public bool shoot = false;
         public string points = "0";
         public int healthies = 0;
 
-        public void hitbox(List<Target> targety, List<Target> targetyNo)
+        public void collision(List<Target> targety, List<Target> targetyNo)
         {
             foreach (Target target in targety)
             {
@@ -26,7 +23,6 @@ namespace GRA
                     int index;
                     string nazwa = target.name;
                     target.hit = true;
-                    hit = true;
                     shoot = false;
                     checkIfHealthy(target);
                     index = (targetyNo.FindIndex(t => t.name == nazwa));

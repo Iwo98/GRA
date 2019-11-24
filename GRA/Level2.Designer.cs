@@ -29,45 +29,32 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Level2));
-            this.Menu_button = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.score = new System.Windows.Forms.Label();
+            this.users_score = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.Menu_button = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Menu_button)).BeginInit();
             this.SuspendLayout();
             // 
-            // Menu_button
+            // score
             // 
-            this.Menu_button.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Menu_button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Menu_button.Image = ((System.Drawing.Image)(resources.GetObject("Menu_button.Image")));
-            this.Menu_button.Location = new System.Drawing.Point(1008, 35);
-            this.Menu_button.Name = "Menu_button";
-            this.Menu_button.Size = new System.Drawing.Size(229, 69);
-            this.Menu_button.TabIndex = 1;
-            this.Menu_button.TabStop = false;
-            this.Menu_button.Click += new System.EventHandler(this.Menu_button_Click);
+            this.score.AutoSize = true;
+            this.score.Font = new System.Drawing.Font("Nirmala UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.score.Location = new System.Drawing.Point(1014, 117);
+            this.score.Name = "score";
+            this.score.Size = new System.Drawing.Size(110, 38);
+            this.score.TabIndex = 2;
+            this.score.Text = "Wynik:";
             // 
-            // label1
+            // users_score
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Nirmala UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(1014, 117);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 38);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Wynik:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Myanmar Text", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(1130, 117);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 53);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "0";
+            this.users_score.AutoSize = true;
+            this.users_score.Font = new System.Drawing.Font("Myanmar Text", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.users_score.Location = new System.Drawing.Point(1130, 117);
+            this.users_score.Name = "users_score";
+            this.users_score.Size = new System.Drawing.Size(40, 53);
+            this.users_score.TabIndex = 3;
+            this.users_score.Text = "0";
             // 
             // timer
             // 
@@ -75,14 +62,26 @@
             this.timer.Interval = 3;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
+            // Menu_button
+            // 
+            this.Menu_button.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Menu_button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Menu_button.Image = global::GRA.Properties.Resources.menu;
+            this.Menu_button.Location = new System.Drawing.Point(1008, 35);
+            this.Menu_button.Name = "Menu_button";
+            this.Menu_button.Size = new System.Drawing.Size(229, 69);
+            this.Menu_button.TabIndex = 1;
+            this.Menu_button.TabStop = false;
+            this.Menu_button.Click += new System.EventHandler(this.Menu_button_Click);
+            // 
             // Level2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1262, 977);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.users_score);
+            this.Controls.Add(this.score);
             this.Controls.Add(this.Menu_button);
             this.DoubleBuffered = true;
             this.MaximizeBox = false;
@@ -104,8 +103,8 @@
 
         #endregion
         private System.Windows.Forms.PictureBox Menu_button;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label score;
+        private System.Windows.Forms.Label users_score;
         private System.Windows.Forms.Timer timer;
     }
 }
