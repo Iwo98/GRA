@@ -24,7 +24,7 @@ namespace GRA
             if (forward == true)
             {
                 this.x=x+5;
-                if ( this.x > 710 )
+                if ( this.x > 880 )
                     forward = false;
             }
             else

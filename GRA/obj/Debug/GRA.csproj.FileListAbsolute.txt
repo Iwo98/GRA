@@ -13,5 +13,12 @@ C:\Users\iwoaj\Desktop\GRA\GRA\obj\Debug\GRA.Level2.resources
 C:\Users\iwoaj\Desktop\GRA\GRA\obj\Debug\GRA.Menu.resources
 C:\Users\iwoaj\Desktop\GRA\GRA\bin\Debug\Resources\peas.png
 C:\Users\iwoaj\Desktop\GRA\GRA\bin\Debug\Resources\fork.png
-C:\Users\iwoaj\Desktop\GRA\GRA\bin\Debug\Resources\marchewka.png
-C:\Users\iwoaj\Desktop\GRA\GRA\bin\Debug\Resources\sól.png
+C:\Users\iwoaj\Desktop\GRA\GRA\bin\Debug\Resources\marchewka.bmp
+C:\Users\iwoaj\Desktop\GRA\GRA\bin\Debug\Resources\salt.bmp
+C:\Users\iwoaj\Desktop\GRA\GRA\bin\Debug\Resources\broccoli.bmp
+C:\Users\iwoaj\Desktop\GRA\GRA\bin\Debug\Resources\cucumber.bmp
+C:\Users\iwoaj\Desktop\GRA\GRA\bin\Debug\Resources\garlic.bmp
+C:\Users\iwoaj\Desktop\GRA\GRA\bin\Debug\Resources\leek.bmp
+C:\Users\iwoaj\Desktop\GRA\GRA\bin\Debug\Resources\onion.bmp
+C:\Users\iwoaj\Desktop\GRA\GRA\bin\Debug\Resources\pasta.bmp
+C:\Users\iwoaj\Desktop\GRA\GRA\bin\Debug\Resources\tomato.bmp

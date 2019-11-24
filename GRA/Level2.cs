@@ -12,26 +12,30 @@ namespace GRA
         Graphics g;
         Shooter shooter = new Shooter();
         Bullet bullet = new Bullet();
-        Target target = new Target(431, 251, 100, 100, 1, "marchewka");
-        Target target1 = new Target(131, 251, 100, 100, 0, "ogórek");
-        Target target2 = new Target(131, 151, 100, 100, 1, "brokul");
-        Target target3 = new Target(431, 151, 100, 100, 1, "4");
-        Target target4 = new Target(231, 151, 100, 100, 0, "5");
-        Target target5 = new Target(231, 251, 100, 100, 1, "6");
-        Target target6 = new Target(531, 251, 100, 100, -1, "7");
-        Target target7 = new Target(531, 151, 100, 100, 0, "8");
-        Target target8 = new Target(631, 151, 100, 100, -1, "9");
-        Target target9 = new Target(631, 251, 100, 100, 1, "10");
-        Target target10 = new Target(331, 251, 100, 100, 0, "11");
-        Target target11 = new Target(31, 251, 100, 100, 1, "12");
-        Target target12 = new Target(31, 151, 100, 100, -1, "13");
-        Target target13 = new Target(331, 151, 100, 100, 0, "14");
-        Target targetNo1 = new Target(41, 41, 80, 80, 1, "marchewka");
-        Target targetNo2 = new Target(541, 41, 80, 80, 1, "brokul");
-        Target targetNo3 = new Target(141, 41, 80, 80, 1, "4");
-        Target targetNo4 = new Target(241, 41, 80, 80, 1, "6");
-        Target targetNo5 = new Target(341, 41, 80, 80, 1, "10");
-        Target targetNo6 = new Target(441, 41, 80, 80, 1, "12");
+        Target target = new Target(431, 251, 60, 60, 1, "marchewka");
+        Target target1 = new Target(731, 151, 60, 60, 0, "broccoli");
+        Target target2 = new Target(131, 251, 60, 60, 1, "garlic");
+        Target target3 = new Target(431, 151, 60, 60, 1, "pasta");
+        Target target4 = new Target(231, 151, 60, 60, 0, "broccoli");
+        Target target5 = new Target(231, 251, 60, 60, 1, "onion");
+        Target target6 = new Target(531, 251, 60, 60, -1, "salt");
+        Target target7 = new Target(531, 151, 60, 60, 0, "broccoli");
+        Target target8 = new Target(631, 151, 60, 60, -1, "salt");
+        Target target9 = new Target(631, 251, 60, 60, 1, "leek");
+        Target target10 = new Target(331, 251, 60, 60, 0, "broccoli");
+        Target target11 = new Target(31, 251, 60, 60, 1, "tomato");
+        Target target12 = new Target(31, 151, 60, 60, -1, "salt");
+        Target target13 = new Target(331, 151, 60, 60, 0, "broccoli");
+        Target target14 = new Target(831, 251, 60, 60, -1, "salt");
+        Target target15 = new Target(731, 251, 60, 60, 0, "broccoli");
+        Target target16 = new Target(831, 151, 60, 60, 0, "broccoli");
+        Target target17 = new Target(131, 151, 60, 60, -1, "salt");
+        Target targetNo1 = new Target(51, 51, 60, 60, 1, "marchewka");
+        Target targetNo2 = new Target(531, 51, 60, 60, 1, "tomato");
+        Target targetNo3 = new Target(131, 51, 60, 60, 1, "leek");
+        Target targetNo4 = new Target(231, 51, 60, 60, 1, "garlic");
+        Target targetNo5 = new Target(331, 51, 60, 60, 1, "pasta");
+        Target targetNo6 = new Target(431, 51, 60, 60, 1, "onion");
 
 
         List<Target> targety = new List<Target>();
@@ -64,6 +68,10 @@ namespace GRA
             targety.Add(target11);
             targety.Add(target12);
             targety.Add(target13);
+            targety.Add(target14);
+            targety.Add(target15);
+            targety.Add(target16);
+            targety.Add(target17);
             targetyNo.Add(targetNo1);
             targetyNo.Add(targetNo2);
             targetyNo.Add(targetNo3);
@@ -90,17 +98,17 @@ namespace GRA
                     if (target != null)
                     {
                         if (target.healthy == -1)
-                            e.Graphics.FillRectangle(Red, target.x, target.y, target.width, target.height);
+                            e.Graphics.DrawImage(new Bitmap("Resources/"+target.name+".bmp"), target.x, target.y, target.width, target.height);
                         else if (target.healthy == 1)
-                            e.Graphics.FillRectangle(Green, target.x, target.y, target.width, target.height);
+                            e.Graphics.DrawImage(new Bitmap("Resources/"+target.name+".bmp"), target.x, target.y, target.width, target.height);
                         else
-                            e.Graphics.FillRectangle(Yellow, target.x, target.y, target.width, target.height);
+                            e.Graphics.DrawImage(new Bitmap("Resources/"+target.name+".bmp"), target.x, target.y, target.width, target.height);
                     }
                 }
 
                 foreach (Target targetNo in targetyNo)                                              //drawing healthy targets that user has to shot
                 {
-                    e.Graphics.FillRectangle(Green, targetNo.x, targetNo.y, targetNo.width, targetNo.height);
+                    e.Graphics.DrawImage(new Bitmap("Resources/" + targetNo.name + ".bmp"), targetNo.x, targetNo.y, targetNo.width, targetNo.height);
 
                     if (targetNo.hit == false)
                     {
@@ -117,7 +125,7 @@ namespace GRA
 
                 if (bullet.healthies == 0)                                            // winning condition
                 {
-                    e.Graphics.DrawImage(new Bitmap("win.png"), 30, 150, 703, 611);
+                    e.Graphics.DrawImage(new Bitmap("win.png"), 30, 150, 901, 610);
                 }
             }
         }
