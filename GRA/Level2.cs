@@ -9,9 +9,10 @@ namespace GRA
     public partial class Level2 : Form
     {
 
-        Graphics g;
-        Shooter shooter = new Shooter();
-        Bullet bullet = new Bullet();
+        
+        Shooter shooter = new Shooter(15);
+        Bullet bullet = new Bullet(10);
+
         Target target = new Target(431, 251, 60, 60, 1, "marchewka");
         Target target1 = new Target(731, 151, 60, 60, 0, "broccoli");
         Target target2 = new Target(131, 251, 60, 60, 1, "garlic");
@@ -30,30 +31,32 @@ namespace GRA
         Target target15 = new Target(731, 251, 60, 60, 0, "broccoli");
         Target target16 = new Target(831, 151, 60, 60, 0, "broccoli");
         Target target17 = new Target(131, 151, 60, 60, -1, "salt");
-        Target targetNo1 = new Target(51, 51, 60, 60, 1, "marchewka");
-        Target targetNo2 = new Target(531, 51, 60, 60, 1, "tomato");
-        Target targetNo3 = new Target(131, 51, 60, 60, 1, "leek");
-        Target targetNo4 = new Target(231, 51, 60, 60, 1, "garlic");
-        Target targetNo5 = new Target(331, 51, 60, 60, 1, "pasta");
-        Target targetNo6 = new Target(431, 51, 60, 60, 1, "onion");
+
+        Target targetNo1 = new Target(81, 51, 60, 60, 1, "marchewka");
+        Target targetNo2 = new Target(581, 51, 60, 60, 1, "tomato");
+        Target targetNo3 = new Target(181, 51, 60, 60, 1, "leek");
+        Target targetNo4 = new Target(281, 51, 60, 60, 1, "garlic");
+        Target targetNo5 = new Target(381, 51, 60, 60, 1, "pasta");
+        Target targetNo6 = new Target(481, 51, 60, 60, 1, "onion");
 
 
         List<Target> targety = new List<Target>();
         List<Target> targetyNo = new List<Target>();
+
         Pen Black = new Pen(Color.Black, 2);
         Pen White = new Pen(Color.AliceBlue, 1);
         Pen Hit = new Pen(Color.Gold, 5);
-        Pen NotHit = new Pen(Color.Gray, 5);
+        Pen NotHit = new Pen(Color.Silver, 5);
+        Font font = new Font("Lucida Sans", 40, FontStyle.Bold);
+        SolidBrush brush = new SolidBrush(Color.Black);
 
-        System.Drawing.SolidBrush Red = new System.Drawing.SolidBrush(System.Drawing.Color.Red);
-        System.Drawing.SolidBrush Green = new System.Drawing.SolidBrush(System.Drawing.Color.Green);
-        System.Drawing.SolidBrush Yellow = new System.Drawing.SolidBrush(System.Drawing.Color.Yellow);
+        private bool win = false;
+
 
         public Level2()
         {
             InitializeComponent();
             DoubleBuffered = true;
-            g = CreateGraphics();
             targety.Add(target);
             targety.Add(target1);
             targety.Add(target2);
@@ -112,10 +115,10 @@ namespace GRA
 
                     if (targetNo.hit == false)
                     {
-                        e.Graphics.DrawRectangle(NotHit, targetNo.x, targetNo.y, targetNo.width, targetNo.height);
+                        e.Graphics.DrawRectangle(NotHit, targetNo.x-5, targetNo.y-5, targetNo.width +10, targetNo.height+10);
                     }
                     else
-                        e.Graphics.DrawRectangle(Hit, targetNo.x, targetNo.y, targetNo.width, targetNo.height); //changing color when user shot the right target
+                        e.Graphics.DrawRectangle(Hit, targetNo.x-5, targetNo.y-5, targetNo.width +10, targetNo.height +10); //changing color when user shot the right target
                 }
 
 
@@ -123,16 +126,22 @@ namespace GRA
                     e.Graphics.DrawImage(new Bitmap("Resources/peas.png"), bullet.x, bullet.y, bullet.width, bullet.height); //drawing a bullet when being shot
 
 
-                if (bullet.healthies == 0)                                            // winning condition
+                if (bullet.healthies == 5)                                            // winning condition
                 {
-                    e.Graphics.DrawImage(new Bitmap("win.png"), 30, 150, 901, 610);
+                    win = true;
+                    e.Graphics.DrawImage(new Bitmap("Resources/cup.png"), 30, 94, 901, 610);
+                    e.Graphics.DrawString("Twój wynik to: " + users_score.Text, font, brush, 220, 410);
+                    restart.Visible = true;
+                    restart.Enabled = true;
                 }
             }
         }
 
             private void timer_Tick(object sender, EventArgs e)
             {
-                updating();
+                if(win == false)
+                    updating();
+
                 Invalidate();
             }
 
@@ -187,5 +196,15 @@ namespace GRA
             menu.SetBounds(this.Location.X, this.Location.Y, this.Width, this.Height);
             this.Hide();
         }
+
+        private void restart_Click(object sender, EventArgs e)
+        {
+            Level2 lvl1 = new Level2();
+            lvl1.Show();
+            lvl1.SetBounds(this.Location.X, this.Location.Y, this.Width, this.Height);
+            this.Hide();
+        }
+
+       
     }  
 }

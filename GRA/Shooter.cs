@@ -12,11 +12,12 @@ namespace GRA
         public int width = 40;
         public int x = 10;
         public int y = 670;
+        private int speed;
         public bool forward = true;
 
-        public Shooter()
+        public Shooter(int speed)
         {
-
+            this.speed = speed;
         }
 
         public void move()

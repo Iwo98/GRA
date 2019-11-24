@@ -22,3 +22,4 @@ C:\Users\iwoaj\Desktop\GRA\GRA\bin\Debug\Resources\leek.bmp
 C:\Users\iwoaj\Desktop\GRA\GRA\bin\Debug\Resources\onion.bmp
 C:\Users\iwoaj\Desktop\GRA\GRA\bin\Debug\Resources\pasta.bmp
 C:\Users\iwoaj\Desktop\GRA\GRA\bin\Debug\Resources\tomato.bmp
+C:\Users\iwoaj\Desktop\GRA\GRA\bin\Debug\Resources\cup.png

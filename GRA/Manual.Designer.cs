@@ -39,9 +39,9 @@
             this.menu.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.menu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.menu.Image = ((System.Drawing.Image)(resources.GetObject("menu.Image")));
-            this.menu.Location = new System.Drawing.Point(854, 47);
+            this.menu.Location = new System.Drawing.Point(1006, 26);
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(375, 132);
+            this.menu.Size = new System.Drawing.Size(229, 80);
             this.menu.TabIndex = 0;
             this.menu.TabStop = false;
             this.menu.Click += new System.EventHandler(this.menu_Click);
@@ -60,6 +60,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LemonChiffon;
             this.ClientSize = new System.Drawing.Size(1262, 977);
             this.Controls.Add(this.pilot);
             this.Controls.Add(this.menu);

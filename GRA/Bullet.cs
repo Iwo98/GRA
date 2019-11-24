@@ -10,15 +10,21 @@ namespace GRA
         public int width = 30;
         public int x = 10;
         public int y = 640;
+        private int speed;
         public bool shoot = false;
         public string points = "0";
         public int healthies = 0;
+
+        public Bullet(int speed)
+        {
+            this.speed = speed;
+        }
 
         public void collision(List<Target> targety, List<Target> targetyNo)
         {
             foreach (Target target in targety)
             {
-                if (target != null && x >= target.x && x <= (target.x + target.width) && y <= (target.y + target.height) && shoot == true)
+                if (target != null && (x+width) >= target.x && x <= (target.x + target.width) && y <= (target.y + target.height) && shoot == true)
                 {
                     int index;
                     string nazwa = target.name;
@@ -57,7 +63,7 @@ namespace GRA
 
         public void move()
         {
-            y = y - 15;
+            y = y - speed;
             if (y < 150)
                 shoot = false;
         }

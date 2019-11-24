@@ -46,5 +46,10 @@ namespace GRA
         {
             Application.Exit();
         }
+
+        private void Menu_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

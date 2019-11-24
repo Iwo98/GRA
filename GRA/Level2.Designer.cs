@@ -29,32 +29,36 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Level2));
             this.score = new System.Windows.Forms.Label();
             this.users_score = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.restart = new System.Windows.Forms.PictureBox();
             this.Menu_button = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.restart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Menu_button)).BeginInit();
             this.SuspendLayout();
             // 
             // score
             // 
             this.score.AutoSize = true;
-            this.score.Font = new System.Drawing.Font("Nirmala UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.score.Location = new System.Drawing.Point(1014, 117);
+            this.score.Font = new System.Drawing.Font("Lucida Sans", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.score.Location = new System.Drawing.Point(999, 121);
             this.score.Name = "score";
-            this.score.Size = new System.Drawing.Size(110, 38);
+            this.score.Size = new System.Drawing.Size(130, 39);
             this.score.TabIndex = 2;
             this.score.Text = "Wynik:";
             // 
             // users_score
             // 
             this.users_score.AutoSize = true;
-            this.users_score.Font = new System.Drawing.Font("Myanmar Text", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.users_score.Location = new System.Drawing.Point(1130, 117);
+            this.users_score.Font = new System.Drawing.Font("Lucida Sans", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.users_score.Location = new System.Drawing.Point(1129, 120);
             this.users_score.Name = "users_score";
-            this.users_score.Size = new System.Drawing.Size(40, 53);
+            this.users_score.Size = new System.Drawing.Size(39, 39);
             this.users_score.TabIndex = 3;
             this.users_score.Text = "0";
+          
             // 
             // timer
             // 
@@ -62,14 +66,29 @@
             this.timer.Interval = 3;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
+            // restart
+            // 
+            this.restart.BackColor = System.Drawing.Color.LemonChiffon;
+            this.restart.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.restart.Enabled = false;
+            this.restart.Image = ((System.Drawing.Image)(resources.GetObject("restart.Image")));
+            this.restart.Location = new System.Drawing.Point(497, 823);
+            this.restart.Name = "restart";
+            this.restart.Size = new System.Drawing.Size(290, 76);
+            this.restart.TabIndex = 4;
+            this.restart.TabStop = false;
+            this.restart.Visible = false;
+            this.restart.Click += new System.EventHandler(this.restart_Click);
+            // 
             // Menu_button
             // 
-            this.Menu_button.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Menu_button.BackColor = System.Drawing.Color.LemonChiffon;
+            this.Menu_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.Menu_button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Menu_button.Image = global::GRA.Properties.Resources.menu;
-            this.Menu_button.Location = new System.Drawing.Point(1008, 35);
+            this.Menu_button.Image = ((System.Drawing.Image)(resources.GetObject("Menu_button.Image")));
+            this.Menu_button.Location = new System.Drawing.Point(1006, 26);
             this.Menu_button.Name = "Menu_button";
-            this.Menu_button.Size = new System.Drawing.Size(229, 69);
+            this.Menu_button.Size = new System.Drawing.Size(229, 80);
             this.Menu_button.TabIndex = 1;
             this.Menu_button.TabStop = false;
             this.Menu_button.Click += new System.EventHandler(this.Menu_button_Click);
@@ -78,9 +97,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.PaleGreen;
+            this.BackColor = System.Drawing.Color.LemonChiffon;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1262, 977);
+            this.Controls.Add(this.restart);
             this.Controls.Add(this.users_score);
             this.Controls.Add(this.score);
             this.Controls.Add(this.Menu_button);
@@ -96,6 +116,7 @@
             this.Load += new System.EventHandler(this.Level2_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Level2_Paint);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Level2_shot);
+            ((System.ComponentModel.ISupportInitialize)(this.restart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Menu_button)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -107,5 +128,6 @@
         private System.Windows.Forms.Label score;
         private System.Windows.Forms.Label users_score;
         private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.PictureBox restart;
     }
 }

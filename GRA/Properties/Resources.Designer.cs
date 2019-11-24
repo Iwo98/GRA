@@ -59,15 +59,5 @@ namespace GRA.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap menu {
-            get {
-                object obj = ResourceManager.GetObject("menu", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }
