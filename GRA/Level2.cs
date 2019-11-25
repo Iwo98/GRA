@@ -17,27 +17,45 @@ namespace GRA
         Target target1 = new Target(731, 151, 60, 60, 0, "broccoli");
         Target target2 = new Target(131, 251, 60, 60, 1, "garlic");
         Target target3 = new Target(431, 151, 60, 60, 1, "pasta");
-        Target target4 = new Target(231, 151, 60, 60, 0, "broccoli");
+        Target target4 = new Target(231, 151, 60, 60, 0, "apple");
         Target target5 = new Target(231, 251, 60, 60, 1, "onion");
-        Target target6 = new Target(531, 251, 60, 60, -1, "salt");
-        Target target7 = new Target(531, 151, 60, 60, 0, "broccoli");
+        Target target6 = new Target(531, 251, 60, 60, -1, "sugar");
+        Target target7 = new Target(531, 151, 60, 60, 0, "avocado");
         Target target8 = new Target(631, 151, 60, 60, -1, "salt");
         Target target9 = new Target(631, 251, 60, 60, 1, "leek");
-        Target target10 = new Target(331, 251, 60, 60, 0, "broccoli");
+        Target target10 = new Target(331, 251, 60, 60, 0, "banana");
         Target target11 = new Target(31, 251, 60, 60, 1, "tomato");
-        Target target12 = new Target(31, 151, 60, 60, -1, "salt");
-        Target target13 = new Target(331, 151, 60, 60, 0, "broccoli");
+        Target target12 = new Target(31, 151, 60, 60, -1, "sugar");
+        Target target13 = new Target(331, 151, 60, 60, 0, "beans");
         Target target14 = new Target(831, 251, 60, 60, -1, "salt");
-        Target target15 = new Target(731, 251, 60, 60, 0, "broccoli");
-        Target target16 = new Target(831, 151, 60, 60, 0, "broccoli");
-        Target target17 = new Target(131, 151, 60, 60, -1, "salt");
+        Target target15 = new Target(731, 251, 60, 60, 0, "cherry");
+        Target target16 = new Target(831, 151, 60, 60, 0, "chicken");
+        Target target17 = new Target(131, 151, 60, 60, -1, "sugar");
+        Target target18 = new Target(181,351, 60, 60, 0, "corn");
+        Target target19 = new Target(781, 351, 60, 60, 0, "eggplant");
+        Target target20 = new Target(681, 351, 60, 60, 0, "hot_pepper");
+        Target target21 = new Target(581, 351, 60, 60, 1, "kiwi");
+        Target target22 = new Target(481, 351, 60, 60, 0, "olive_oil");
+        Target target23 = new Target(381, 351, 60, 60, 0, "peanuts");
+        Target target24 = new Target(281, 351, 60, 60, 0, "pepper");
+        Target target25 = new Target(131, 451, 60, 60, 0, "potatoes");
+        Target target26 = new Target(31, 451, 60, 60, 0, "radish");
+        Target target27 = new Target(231, 451, 60, 60, 0, "rice");
+        Target target28 = new Target(331, 451, 60, 60, 0, "salmon");
+        Target target29 = new Target(431, 451, 60, 60, 0, "strawberry");
+        Target target30 = new Target(531, 451, 60, 60, 0, "yellow_pepper");
+        Target target31 = new Target(631, 451, 60, 60, -1, "sugar");
 
-        Target targetNo1 = new Target(81, 51, 60, 60, 1, "marchewka");
-        Target targetNo2 = new Target(581, 51, 60, 60, 1, "tomato");
-        Target targetNo3 = new Target(181, 51, 60, 60, 1, "leek");
-        Target targetNo4 = new Target(281, 51, 60, 60, 1, "garlic");
-        Target targetNo5 = new Target(381, 51, 60, 60, 1, "pasta");
-        Target targetNo6 = new Target(481, 51, 60, 60, 1, "onion");
+
+
+        Target targetNo1 = new Target(51, 51, 60, 60, 1, "marchewka");
+        Target targetNo2 = new Target(151, 51, 60, 60, 1, "tomato");
+        Target targetNo3 = new Target(251, 51, 60, 60, 1, "leek");
+        Target targetNo4 = new Target(351, 51, 60, 60, 1, "garlic");
+        Target targetNo5 = new Target(451, 51, 60, 60, 1, "pasta");
+        Target targetNo6 = new Target(551, 51, 60, 60, 1, "onion");
+        Target targetNo7 = new Target(651, 51, 60, 60, 1, "kiwi");
+        
 
 
         List<Target> targety = new List<Target>();
@@ -75,12 +93,28 @@ namespace GRA
             targety.Add(target15);
             targety.Add(target16);
             targety.Add(target17);
+            targety.Add(target18);
+            targety.Add(target19);
+            targety.Add(target20);
+            targety.Add(target21);
+            targety.Add(target22);
+            targety.Add(target23);
+            //targety.Add(target24);
+           // targety.Add(target25);
+           // targety.Add(target26);
+           // targety.Add(target27);
+           // targety.Add(target28);
+           // targety.Add(target29);
+           // targety.Add(target30);
+           // targety.Add(target31);
             targetyNo.Add(targetNo1);
             targetyNo.Add(targetNo2);
             targetyNo.Add(targetNo3);
             targetyNo.Add(targetNo4);
             targetyNo.Add(targetNo5);
             targetyNo.Add(targetNo6);
+            targetyNo.Add(targetNo7);
+        
             countHealthies(targety);
         }
 
@@ -126,7 +160,7 @@ namespace GRA
                     e.Graphics.DrawImage(new Bitmap("Resources/peas.png"), bullet.x, bullet.y, bullet.width, bullet.height); //drawing a bullet when being shot
 
 
-                if (bullet.healthies == 5)                                            // winning condition
+                if (bullet.healthies == 0)                                            // winning condition
                 {
                     win = true;
                     e.Graphics.DrawImage(new Bitmap("Resources/cup.png"), 30, 94, 901, 610);
