@@ -28,7 +28,7 @@ namespace GRA
 
         private void level1_Click(object sender, EventArgs e)
         {
-            Level2 lvl1 = new Level2();
+            Level1 lvl1 = new Level1();
             lvl1.Show();
             lvl1.SetBounds(this.Location.X, this.Location.Y, this.Width, this.Height);
             this.Hide();

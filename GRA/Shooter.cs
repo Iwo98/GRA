@@ -10,7 +10,7 @@ namespace GRA
     {
         public int height = 80;
         public int width = 40;
-        public int x = 10;
+        public int x = 40;
         public int y = 670;
         private int speed;
         public bool forward = true;
@@ -24,14 +24,14 @@ namespace GRA
         {
             if (forward == true)
             {
-                this.x=x+5;
-                if ( this.x > 880 )
+                this.x=x+speed;
+                if ( this.x >= 880 )
                     forward = false;
             }
             else
             {
-                this.x=x-5;
-                if( x < 30 )
+                this.x=x-speed;
+                if( x <= 40 )
                     forward = true;
             }
   
