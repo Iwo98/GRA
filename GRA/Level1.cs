@@ -146,7 +146,7 @@ namespace GRA
 
 
                 if (bullet.shoot == true)
-                    e.Graphics.DrawImage(new Bitmap("Resources/peas.bmp"), bullet.x, bullet.y, bullet.width, bullet.height); //drawing a bullet when being shot
+                    e.Graphics.DrawImage(new Bitmap("Resources/peas.png"), bullet.x, bullet.y, bullet.width, bullet.height); //drawing a bullet when being shot
 
 
                 if (bullet.healthies == 0)                                            // winning condition

@@ -64,7 +64,7 @@
             this.score.Font = new System.Drawing.Font("Lucida Sans", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.score.Location = new System.Drawing.Point(999, 121);
             this.score.Name = "score";
-            this.score.Size = new System.Drawing.Size(130, 39);
+            this.score.Size = new System.Drawing.Size(129, 38);
             this.score.TabIndex = 3;
             this.score.Text = "Wynik:";
             // 
@@ -74,7 +74,7 @@
             this.users_score.Font = new System.Drawing.Font("Lucida Sans", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.users_score.Location = new System.Drawing.Point(1129, 120);
             this.users_score.Name = "users_score";
-            this.users_score.Size = new System.Drawing.Size(39, 39);
+            this.users_score.Size = new System.Drawing.Size(38, 38);
             this.users_score.TabIndex = 4;
             this.users_score.Text = "0";
             // 
@@ -103,6 +103,7 @@
             this.Controls.Add(this.score);
             this.Controls.Add(this.Menu_button);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1280, 1024);
             this.MinimumSize = new System.Drawing.Size(1280, 1024);
