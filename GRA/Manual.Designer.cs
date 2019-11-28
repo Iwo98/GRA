@@ -30,8 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Manual));
             this.menu = new System.Windows.Forms.PictureBox();
-            this.pilot = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.menu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menu
@@ -46,15 +47,14 @@
             this.menu.TabStop = false;
             this.menu.Click += new System.EventHandler(this.menu_Click);
             // 
-            // pilot
+            // pictureBox1
             // 
-            this.pilot.AutoSize = true;
-            this.pilot.Font = new System.Drawing.Font("Stencil", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pilot.Location = new System.Drawing.Point(212, 244);
-            this.pilot.Name = "pilot";
-            this.pilot.Size = new System.Drawing.Size(119, 33);
-            this.pilot.TabIndex = 1;
-            this.pilot.Text = "label1";
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(113, 191);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1052, 668);
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // Manual
             // 
@@ -62,7 +62,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LemonChiffon;
             this.ClientSize = new System.Drawing.Size(1262, 977);
-            this.Controls.Add(this.pilot);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -74,14 +74,14 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Manual_FormClosing);
             this.Load += new System.EventHandler(this.Manual_Load);
             ((System.ComponentModel.ISupportInitialize)(this.menu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.PictureBox menu;
-        private System.Windows.Forms.Label pilot;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

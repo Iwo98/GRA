@@ -13,7 +13,7 @@ namespace GRA
 
         private void Manual_Load(object sender, EventArgs e)
         {
-            pilot.Text = "Instrukcja";
+            
         }
 
         private void Manual_FormClosing(object sender, FormClosingEventArgs e)
