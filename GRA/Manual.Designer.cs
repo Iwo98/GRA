@@ -30,9 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Manual));
             this.menu = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.manual_text = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.menu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.manual_text)).BeginInit();
             this.SuspendLayout();
             // 
             // menu
@@ -47,14 +47,14 @@
             this.menu.TabStop = false;
             this.menu.Click += new System.EventHandler(this.menu_Click);
             // 
-            // pictureBox1
+            // manual_text
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(113, 191);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1052, 668);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.manual_text.Image = ((System.Drawing.Image)(resources.GetObject("manual_text.Image")));
+            this.manual_text.Location = new System.Drawing.Point(113, 191);
+            this.manual_text.Name = "manual_text";
+            this.manual_text.Size = new System.Drawing.Size(1052, 668);
+            this.manual_text.TabIndex = 1;
+            this.manual_text.TabStop = false;
             // 
             // Manual
             // 
@@ -62,7 +62,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LemonChiffon;
             this.ClientSize = new System.Drawing.Size(1262, 977);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.manual_text);
             this.Controls.Add(this.menu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -72,16 +72,21 @@
             this.Text = "Manual";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Manual_FormClosing);
-            this.Load += new System.EventHandler(this.Manual_Load);
             ((System.ComponentModel.ISupportInitialize)(this.menu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.manual_text)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
+        /// <summary>
+        /// PictureBox z guzikiem do przejścia do Menu
+        /// </summary>
         private System.Windows.Forms.PictureBox menu;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        /// <summary>
+        /// PictureBox z napisaną instrukcją do gry
+        /// </summary>
+        private System.Windows.Forms.PictureBox manual_text;
     }
 }

@@ -104,7 +104,6 @@
             this.Text = "Menu";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Menu_FormClosing);
-            this.Load += new System.EventHandler(this.Menu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.level1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.level3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.level2)).EndInit();
@@ -114,10 +113,21 @@
         }
 
         #endregion
-
+        /// <summary>
+        /// Obiekt klasy Manual
+        /// </summary>
         private System.Windows.Forms.PictureBox manual;
+        /// <summary>
+        /// Obiekt klasy Level2
+        /// </summary>
         private System.Windows.Forms.PictureBox level2;
+        /// <summary>
+        /// Obiekt klasy Level3
+        /// </summary>
         private System.Windows.Forms.PictureBox level3;
+        /// <summary>
+        /// Obiekt klasy Level1
+        /// </summary>
         private System.Windows.Forms.PictureBox level1;
     }
 }

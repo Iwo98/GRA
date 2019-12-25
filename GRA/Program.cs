@@ -6,6 +6,9 @@ using System.Windows.Forms;
 
 namespace GRA
 {
+    /// <summary>
+    /// Klasa która służy do uruchomienia całej aplikacji i rozpoczęcia zabawy z grą.
+    /// </summary>
     static class Program
     {
         

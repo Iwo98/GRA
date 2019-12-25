@@ -123,10 +123,26 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox Menu_button;
-        private System.Windows.Forms.Label score;
-        private System.Windows.Forms.Label users_score;
-        private System.Windows.Forms.PictureBox restart;
+        /// <summary>
+        /// Wymagany do poprawnego działania timer_Tick()
+        /// </summary>
         private System.Windows.Forms.Timer timer;
+        /// <summary>
+        /// PictureBox z guzikiem do przejścia do Menu
+        /// </summary>
+        private System.Windows.Forms.PictureBox Menu_button;
+        /// <summary>
+        /// Label wyświetlający napis "Wynik:"
+        /// </summary>
+        private System.Windows.Forms.Label score;
+        /// <summary>
+        /// Label wyświetlający aktualny wynik gracza przechowywany w bullet.points
+        /// </summary>
+        /// @see Bullet.points
+        private System.Windows.Forms.Label users_score;
+        /// <summary>
+        /// PictureBox z guzikiem do ponownego uruchomienia tego samego poziomu (Level3)
+        /// </summary>
+        private System.Windows.Forms.PictureBox restart;
     }
 }

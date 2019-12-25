@@ -113,7 +113,6 @@
             this.Text = "Level2";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Level2_FormClosing);
-            this.Load += new System.EventHandler(this.Level2_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Level2_Paint);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Level2_shot);
             ((System.ComponentModel.ISupportInitialize)(this.restart)).EndInit();
@@ -124,10 +123,26 @@
         }
 
         #endregion
-        private System.Windows.Forms.PictureBox Menu_button;
-        private System.Windows.Forms.Label score;
-        private System.Windows.Forms.Label users_score;
+        /// <summary>
+        /// Wymagany do poprawnego działania timer_Tick()
+        /// </summary>
         private System.Windows.Forms.Timer timer;
+        /// <summary>
+        /// PictureBox z guzikiem do przejścia do Menu
+        /// </summary>
+        private System.Windows.Forms.PictureBox Menu_button;
+        /// <summary>
+        /// Label wyświetlający napis "Wynik:"
+        /// </summary>
+        private System.Windows.Forms.Label score;
+        /// <summary>
+        /// Label wyświetlający aktualny wynik gracza przechowywany w bullet.points
+        /// </summary>
+        /// @see Bullet.points
+        private System.Windows.Forms.Label users_score;
+        /// <summary>
+        /// PictureBox z guzikiem do ponownego uruchomienia tego samego poziomu (Level2)
+        /// </summary>
         private System.Windows.Forms.PictureBox restart;
     }
 }
