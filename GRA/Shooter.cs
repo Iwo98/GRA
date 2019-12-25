@@ -13,14 +13,14 @@ namespace GRA
         public int x = 40;
         public int y = 670;
         private int speed;
-        public bool forward = true;
+        public bool forward = true; //the flag that says if the obejct is going back or forward
 
         public Shooter(int speed)
         {
-            this.speed = speed;
+            this.speed = speed; //giving a proper speed to the shooter
         }
 
-        public void move()
+        public void move()    //funtion that moves the shooter forward and back
         {
             if (forward == true)
             {
@@ -34,7 +34,6 @@ namespace GRA
                 if( x <= 40 )
                     forward = true;
             }
-  
         }
     }
 }

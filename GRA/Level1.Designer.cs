@@ -112,7 +112,6 @@
             this.Text = "Level1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Level1_FormClosing);
-            this.Load += new System.EventHandler(this.Level1_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Level1_Paint);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Level1_shot);
             ((System.ComponentModel.ISupportInitialize)(this.Menu_button)).EndInit();

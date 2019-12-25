@@ -15,48 +15,44 @@ namespace GRA
         Shooter shooter = new Shooter(15);
         Bullet bullet = new Bullet(20);
 
-        Target target = new Target(81, 151, 60, 60, 1, "yellow_pepper");
-        Target target1 = new Target(181, 151, 60, 60, 0, "broccoli");
-        Target target2 = new Target(281, 151, 60, 60, 0, "garlic");
-        Target target3 = new Target(381, 151, 60, 60, 0, "pasta");
-        Target target4 = new Target(481, 151, 60, 60, 1, "apple");
-        Target target5 = new Target(681, 151, 60, 60, 1, "onion");
-        Target target6 = new Target(581, 151, 60, 60, -1, "sugar");
-        Target target7 = new Target(781, 151, 60, 60, 0, "avocado");
-        Target target8 = new Target(31, 251, 60, 60, -1, "salt");
-        Target target9 = new Target(131, 251, 60, 60, 1, "leek");
-        Target target10 = new Target(231, 251, 60, 60, 0, "banana");
-        Target target11 = new Target(331, 251, 60, 60, 1, "tomato");
-        Target target12 = new Target(431, 251, 60, 60, -1, "sugar");
-        Target target13 = new Target(531, 251, 60, 60, 0, "beans");
-        Target target14 = new Target(631, 251, 60, 60, -1, "salt");
-        Target target15 = new Target(731, 251, 60, 60, 1, "cherry");
-        Target target16 = new Target(831, 251, 60, 60, 0, "chicken");
-        Target target17 = new Target(181, 351, 60, 60, -1, "sugar");
-        Target target18 = new Target(81, 351, 60, 60, 0, "corn");
-        Target target19 = new Target(281, 351, 60, 60, 0, "eggplant");
-        Target target20 = new Target(481, 351, 60, 60, 0, "hot_pepper");
-        Target target21 = new Target(581, 351, 60, 60, 1, "kiwi");
-        Target target22 = new Target(681, 351, 60, 60, 0, "olive_oil");
-        Target target23 = new Target(781, 351, 60, 60, 0, "peanuts");
-        Target target24 = new Target(381, 351, 60, 60, -1, "salt");
-        Target target25 = new Target(131, 451, 60, 60, 0, "potatoes");
-        Target target26 = new Target(31, 451, 60, 60, 0, "radish");
-        Target target27 = new Target(231, 451, 60, 60, 0, "rice");
-        Target target28 = new Target(331, 451, 60, 60, 0, "salmon");
-        Target target29 = new Target(431, 451, 60, 60, 0, "strawberry");
-        Target target30 = new Target(531, 451, 60, 60, 1, "yellow_pepper");
-        Target target31 = new Target(381, 351, 60, 60, -1, "sugar");
+        Target target = new Target(45, 152, 60, 60, 0, "avocado");
+        Target target1 = new Target(145, 152, 60, 60, 1, "chicken");
+        Target target2 = new Target(245, 152, 60, 60, 0, "eggplant");
+        Target target3 = new Target(345, 152, 60, 60, -1, "salt");
+        Target target4 = new Target(445, 152, 60, 60, 0, "banana");
+        Target target5 = new Target(545, 152, 60, 60, -1, "sugar");
+        Target target6 = new Target(645, 152, 60, 60, 1, "rice");
+        Target target7 = new Target(745, 152, 60, 60, 0, "radish");
+        Target target8 = new Target(845, 152, 60, 60, -1, "salt");
+        Target target9 = new Target(95, 252, 60, 60, -1, "sugar");
+        Target target10 = new Target(195, 252, 60, 60, 0, "tomato");
+        Target target11 = new Target(295, 252, 60, 60, 1, "hot_pepper");
+        Target target12 = new Target(395, 252, 60, 60, 0, "potatoes");
+        Target target13 = new Target(495, 252, 60, 60, 1, "leek");
+        Target target14 = new Target(595, 252, 60, 60, 0, "eggplant");
+        Target target15 = new Target(695, 252, 60, 60, -1, "salt");
+        Target target16 = new Target(795, 252, 60, 60, 0, "pasta");
+        Target target17 = new Target(45, 352, 60, 60, 0, "kiwi");
+        Target target18 = new Target(145, 352, 60, 60, 1, "corn");
+        Target target19 = new Target(245, 352, 60, 60, 0, "cucumber");
+        Target target20 = new Target(345, 352, 60, 60, 0, "carrot");
+        Target target21 = new Target(445, 352, 60, 60, 1, "beans");
+        Target target22 = new Target(545, 352, 60, 60, -1, "salt");
+        Target target23 = new Target(645, 352, 60, 60, 1, "onion");
+        Target target24 = new Target(745, 352, 60, 60, 0, "salmon");
+        Target target25 = new Target(845, 352, 60, 60, -1, "sugar");
 
 
 
-        Target targetNo1 = new Target(51, 51, 60, 60, 1, "yellow_pepper");
-        Target targetNo2 = new Target(151, 51, 60, 60, 1, "apple");
-        Target targetNo3 = new Target(251, 51, 60, 60, 1, "leek");
-        Target targetNo4 = new Target(351, 51, 60, 60, 1, "tomato");
-        Target targetNo5 = new Target(451, 51, 60, 60, 1, "cherry");
-        Target targetNo6 = new Target(551, 51, 60, 60, 1, "onion");
-        Target targetNo7 = new Target(651, 51, 60, 60, 1, "kiwi");
+
+        Target targetNo1 = new Target(51, 51, 60, 60, 1, "chicken");
+        Target targetNo2 = new Target(151, 51, 60, 60, 1, "rice");
+        Target targetNo3 = new Target(251, 51, 60, 60, 1, "hot_pepper");
+        Target targetNo4 = new Target(351, 51, 60, 60, 1, "leek");
+        Target targetNo5 = new Target(451, 51, 60, 60, 1, "corn");
+        Target targetNo6 = new Target(551, 51, 60, 60, 1, "beans");
+        Target targetNo7 = new Target(651, 51, 60, 60, 1, "onion");
+
 
 
 
@@ -101,6 +97,7 @@ namespace GRA
             targety.Add(target22);
             targety.Add(target23);
             targety.Add(target24);
+            targety.Add(target25);
 
             targetyNo.Add(targetNo1);
             targetyNo.Add(targetNo2);
@@ -140,30 +137,24 @@ namespace GRA
                 updating();
 
             Invalidate();
-
         }
 
         private void Level3_Paint(object sender, PaintEventArgs e)
         {
             {
-                e.Graphics.DrawRectangle(Black, 30, 30, 701, 100);                      //drawing rectangle for the targets that has to be shot
-                e.Graphics.DrawRectangle(Black, 30, 150, 901, 610);                     //drawing a rectangle for the map 
-                e.Graphics.DrawImage(new Bitmap("Resources/fork.bmp"), shooter.x, shooter.y, shooter.width, shooter.height);  //drawing a shooter
+                e.Graphics.DrawRectangle(Black, 30, 30, 701, 100);                      
+                e.Graphics.DrawRectangle(Black, 30, 150, 901, 610);                     
+                e.Graphics.DrawImage(new Bitmap("Resources/fork.bmp"), shooter.x, shooter.y, shooter.width, shooter.height);  
 
-                foreach (Target target in targety)                   //drawing targets on the standard map
+                foreach (Target target in targety)                   
                 {
                     if (target != null)
                     {
-                        if (target.healthy == -1)
-                            e.Graphics.DrawImage(new Bitmap("Resources/" + target.name + ".bmp"), target.x, target.y, target.width, target.height);
-                        else if (target.healthy == 1)
-                            e.Graphics.DrawImage(new Bitmap("Resources/" + target.name + ".bmp"), target.x, target.y, target.width, target.height);
-                        else
-                            e.Graphics.DrawImage(new Bitmap("Resources/" + target.name + ".bmp"), target.x, target.y, target.width, target.height);
+                         e.Graphics.DrawImage(new Bitmap("Resources/" + target.name + ".bmp"), target.x, target.y, target.width, target.height);
                     }
                 }
 
-                foreach (Target targetNo in targetyNo)                                              //drawing healthy targets that user has to shot
+                foreach (Target targetNo in targetyNo)                                             
                 {
                     e.Graphics.DrawImage(new Bitmap("Resources/" + targetNo.name + ".bmp"), targetNo.x, targetNo.y, targetNo.width, targetNo.height);
 
@@ -172,15 +163,15 @@ namespace GRA
                         e.Graphics.DrawRectangle(NotHit, targetNo.x - 5, targetNo.y - 5, targetNo.width + 10, targetNo.height + 10);
                     }
                     else
-                        e.Graphics.DrawRectangle(Hit, targetNo.x - 5, targetNo.y - 5, targetNo.width + 10, targetNo.height + 10); //changing color when user shot the right target
+                        e.Graphics.DrawRectangle(Hit, targetNo.x - 5, targetNo.y - 5, targetNo.width + 10, targetNo.height + 10); 
                 }
 
 
                 if (bullet.shoot == true)
-                    e.Graphics.DrawImage(new Bitmap("Resources/peas.png"), bullet.x, bullet.y, bullet.width, bullet.height); //drawing a bullet when being shot
+                    e.Graphics.DrawImage(new Bitmap("Resources/peas.png"), bullet.x, bullet.y, bullet.width, bullet.height); 
 
 
-                if (bullet.healthies == 0)                                            // winning condition
+                if (bullet.healthies == 0)                                            
                 {
                     win = true;
                     e.Graphics.DrawImage(new Bitmap("Resources/cup.png"), 30, 94, 901, 610);
@@ -191,7 +182,7 @@ namespace GRA
             }
         }
 
-        private void countHealthies(List<Target> targety)       //counting healthy targets
+        private void countHealthies(List<Target> targety)       
         {
             int i = 0;
             foreach (Target target in targety)
@@ -205,9 +196,12 @@ namespace GRA
         public void updating()
         {
             shooter.move();
-            bullet.collision(targety, targetyNo);                          //checking out collision
+
             if (bullet.shoot == true)
+            {
                 bullet.move();
+                bullet.collision(targety, targetyNo);
+            }
 
             else
             {
@@ -215,17 +209,16 @@ namespace GRA
                 bullet.y = 640;
             }
 
-            users_score.Text = bullet.points;                                //updating points
+            users_score.Text = bullet.points;                                
 
-            int e = (targety.FindIndex(t => t.hit == true));            //finding out which object was shot
+            int e = (targety.FindIndex(t => t.hit == true));            
 
-            if (e != -1)                                                //removing object from the list that was shot
+            if (e != -1)                                                
                 targety.RemoveAt(e);
         }
 
         private void Level3_shot(object sender, KeyEventArgs e)
         {
-
             int keyIndex = e.KeyValue;
 
             if (keyIndex == 32)

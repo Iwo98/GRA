@@ -13,12 +13,12 @@ namespace GRA
         public int height = 20;
         public int width = 20;
         public bool hit = false;
-        public int healthy = 0;
+        public int healthy = 0; //healthy flag 
         public string name;
         
 
 
-        public Target(int x, int y, int height, int width, int healthy, string name)
+        public Target(int x, int y, int height, int width, int healthy, string name) //to initialize each target
         {
             this.x = x;
             this.y = y;

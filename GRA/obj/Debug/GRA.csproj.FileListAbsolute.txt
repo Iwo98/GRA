@@ -10,7 +10,6 @@ C:\Users\iwoaj\Desktop\GRA\GRA\obj\Debug\GRA.pdb
 C:\Users\iwoaj\Desktop\GRA\GRA\obj\Debug\GRA.Manual.resources
 C:\Users\iwoaj\Desktop\GRA\GRA\obj\Debug\GRA.Level2.resources
 C:\Users\iwoaj\Desktop\GRA\GRA\obj\Debug\GRA.Menu.resources
-C:\Users\iwoaj\Desktop\GRA\GRA\bin\Debug\Resources\marchewka.bmp
 C:\Users\iwoaj\Desktop\GRA\GRA\bin\Debug\Resources\salt.bmp
 C:\Users\iwoaj\Desktop\GRA\GRA\bin\Debug\Resources\broccoli.bmp
 C:\Users\iwoaj\Desktop\GRA\GRA\bin\Debug\Resources\cucumber.bmp
@@ -45,3 +44,4 @@ C:\Users\iwoaj\Desktop\GRA\GRA\bin\Debug\Resources\peas.bmp
 C:\Users\iwoaj\Desktop\GRA\GRA\obj\Debug\GRA.Level1.resources
 C:\Users\iwoaj\Desktop\GRA\GRA\obj\Debug\GRA.Level3.resources
 C:\Users\iwoaj\Desktop\GRA\GRA\bin\Debug\Resources\peas.png
+C:\Users\iwoaj\Desktop\GRA\GRA\bin\Debug\Resources\carrot.bmp
